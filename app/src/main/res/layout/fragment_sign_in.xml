@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="100dp"
+    tools:context=".Signing.SignIn">
+<EditText
+    android:layout_width="match_parent"
+    android:layout_marginStart="40dp"
+    android:layout_marginEnd="40dp"
+    android:drawableStart="@drawable/ic_person_24dp"
+    android:drawablePadding="10dp"
+    android:id="@+id/sign_in_EorU"
+    android:hint="Email or Username"
+    android:textStyle="bold"
+    android:textSize="18sp"
+    android:textAlignment="textStart"
+    android:textColor="#ffff00"
+    android:background="@drawable/notactivebtn"
+    android:padding="10dp"
+    android:layout_alignParentTop="true"
+    android:layout_height="wrap_content" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:drawableStart="@drawable/ic_lock_24dp"
+        android:drawablePadding="10dp"
+        android:id="@+id/sign_in_password"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:background="@drawable/notactivebtn"
+        android:textSize="18sp"
+        android:layout_below="@id/sign_in_EorU"
+        android:layout_marginTop="40dp"
+        android:textAlignment="textStart"
+        android:textColor="#ffff00"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:id="@+id/sign_in_signbtn"
+        android:background="@drawable/activebtn"
+        android:text="SIGN IN"
+        android:textColor="#000000"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_below="@id/sign_in_password"
+        android:layout_marginTop="40dp"/>
+</RelativeLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/feed_icn"
+        android:icon="@drawable/ic_person_24dp"
+        android:title="Feed"
+        />
+    <item
+        android:id="@+id/chat_icn"
+        android:icon="@drawable/ic_lock_24dp"
+        android:title="Chat" />
+
+
+    <item
+        android:id="@+id/groups_icn"
+        android:icon="@drawable/ic_person_24dp"
+        android:title="Groups" />
+
+</menu>
