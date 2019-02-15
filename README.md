@@ -1,1 +1,1 @@
-# Gamers-Hub
+# Gamers Hub
