@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminstrationLayouts.AdminMain">
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/admin_navbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:background="?android:attr/windowBackground"
+        android:foreground="?attr/selectableItemBackground"
+        app:itemBackground="@color/default_bmb_dimColor"
+        app:itemIconTint="#ff9900"
+        app:itemTextColor="#ff9900"
+        app:itemIconSize="24dp"
+        android:textAlignment="center"
+        app:menu="@menu/admin_navmenu" />
+
+</RelativeLayout>

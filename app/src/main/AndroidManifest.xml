@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".User_Profile"></activity>
+        <activity android:name=".AdminstrationLayouts.AdminMain"></activity>
+        <activity android:name=".User_Profile" />
         <activity
             android:name=".Opener.Opener"
             android:screenOrientation="portrait" />
