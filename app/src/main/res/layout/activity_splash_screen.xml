@@ -7,6 +7,7 @@
     android:background="#ffffff"
     xmlns:custom="http://schemas.android.com/apk/res-auto"
     tools:context=".Opener.SplashScreen">
+
     <com.cunoraz.gifview.library.GifView
         android:id="@+id/splashgif"
         android:layout_width="wrap_content"
@@ -22,19 +23,29 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
         android:layout_alignParentBottom="true">
+        <ImageView
+            android:layout_width="75dp"
+            android:layout_height="120dp"
+            android:id="@+id/gamers_icn"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/gamers_hub_icn"
+            />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
+            android:layout_marginStart="10dp"
             android:id="@+id/powered_txt"
             android:text="Powered By"
             android:textColor="#ff9900"
             android:textSize="20sp"
+            android:layout_toEndOf="@id/gamers_icn"
             android:layout_centerVertical="true"
             />
         <ImageView
             android:layout_width="75dp"
             android:layout_height="75dp"
+            android:layout_centerVertical="true"
             android:layout_marginStart="10dp"
             android:layout_toEndOf="@id/powered_txt"
             android:src="@drawable/osc_logo"/>
