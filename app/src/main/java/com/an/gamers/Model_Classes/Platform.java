@@ -4,6 +4,7 @@ public class Platform {
     private String Name;
     private Integer Image;
 
+    public Platform(){};
     public Platform(String name, Integer image) {
         Name = name;
         Image = image;
