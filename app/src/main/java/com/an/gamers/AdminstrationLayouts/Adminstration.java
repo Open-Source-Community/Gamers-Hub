@@ -57,6 +57,7 @@ public class Adminstration {
     public void AddGame(Game newGame) {
         databaseRef= FirebaseDatabase.getInstance().getReference(games_s);
         databaseRef.child(newGame.getGroupId()).setValue(newGame);
+        //add game shold create a group and call addgroup()
     }
     public void AddPlateform(Platform newPlatform) {
         databaseRef= FirebaseDatabase.getInstance().getReference(platform_s);
@@ -169,6 +170,7 @@ public class Adminstration {
             }
         });
     }
+
     public void Edituser(User updateuser) {
         databaseRef= FirebaseDatabase.getInstance().getReference(users_s).child(updateuser.getmId_user());
         databaseRef.setValue(updateuser);
@@ -189,6 +191,7 @@ public class Adminstration {
         databaseRef= FirebaseDatabase.getInstance().getReference(posts_s).child(updatepost.getmId());
         databaseRef.setValue(updatepost);
     }
+
     public void deleteuser(String userid) {
         databaseRef= FirebaseDatabase.getInstance().getReference(users_s).child(userid);
         databaseRef.removeValue();
@@ -240,20 +243,21 @@ public class Adminstration {
 
             }
         });
-    };
-    public void user_addpost(Post addedpost, String user_id, String groupid){
+    }
+    public void user_addpost(Post addedpost, String user_id){
         //addes post to a user and a group
         //add post to list of posts in user using its id
+        String groupid = addedpost.getmGroupid();
         databaseRef = FirebaseDatabase.getInstance().getReference(posts_s);
-        DatabaseReference groupref = FirebaseDatabase.getInstance().getReference(groups_s);
-        DatabaseReference userref = FirebaseDatabase.getInstance().getReference(users_s);
+        final DatabaseReference group_ref = FirebaseDatabase.getInstance().getReference(groups_s).child(groupid);
+        final DatabaseReference user_ref = FirebaseDatabase.getInstance().getReference(users_s).child(user_id);
 
-        final String key = databaseRef.push().setValue(addedpost).getkey();
-
-
-        //databaseroot.child(groups_s).child(groupid).child(posts_s).push(post_id);
-        databaseRef = FirebaseDatabase.getInstance().getReference(users_s).child(user_id);
-        databaseRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        //add post to db posts
+        DatabaseReference post_ref =  databaseRef.push();//pushes an empty and creates a key for it
+        final String key = post_ref.getKey();
+        databaseRef.child(key).setValue(addedpost);//fill it with the new post
+        //update user post list
+        user_ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 //add post to list of posts in the group using its id
@@ -261,7 +265,8 @@ public class Adminstration {
                 List<String> posts = temp.getlPostsid();
                 posts.add(key);
                 temp.setlPostsid(posts);
-                databaseRef.setValue(temp);
+                user_ref.setValue(temp);
+
             }
 
             @Override
@@ -269,37 +274,50 @@ public class Adminstration {
 
             }
         });
-    };
+        //update group post list
+        group_ref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                //add post to list of posts in the group using its id
+                Group temp = dataSnapshot.getValue(Group.class);
+                List<String> posts = temp.getlPostsid();
+                posts.add(key);
+                temp.setlPostsid(posts);
+                group_ref.setValue(temp);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+    }
     public void user_addplatform(Platform addedplat, String user_id){
         //add platform to user's fav platform list
         //databaseroot.child("user").child(user_id).child("favplats").push(addedplat.getid());
-
-    };
-    public void create_group(Game groupgame){
-        Group added = new Group();
-        //databaseroot.child(groups_s).push(added);
-
-        //added.setid(groupgame.getname());
-        //create group id
-        //added.setname(groupgame.getname+" community");
-
+        databaseRef = FirebaseDatabase.getInstance().getReference(platform_s);
+        DatabaseReference plat_ref =  databaseRef.push();//pushes an empty and creates a key for it
+        final String key = plat_ref.getKey();
+        databaseRef.child(key).setValue(addedplat);//fill it with the new post
     }
     public Post getbyid_post(String search_id){
         Post post=new Post();
         if(mPosts.containsKey(search_id))
-            post =(Post) mPosts.get(search_id);
+            post = mPosts.get(search_id);
         return post;
     }
     public Game getbyid_game(String search_id){
         Game game=new Game();
         if(mGames.containsKey(search_id))
-            game =(Game) mGames.get(search_id);
+            game = mGames.get(search_id);
         return game;
     }
     public Platform getbyid_platform(String search_id){
         Platform plat=new Platform();
         if(mPlateforms.containsKey(search_id))
-            plat =(Platform) mPlateforms.get(search_id);
+            plat = mPlateforms.get(search_id);
         return plat;
     }
 
