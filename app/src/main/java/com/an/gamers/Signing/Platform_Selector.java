@@ -17,7 +17,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.an.gamers.Model_Classes.Platform;
 import com.an.gamers.R;
 
 import java.util.ArrayList;
