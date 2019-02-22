@@ -9,8 +9,9 @@
         android:roundIcon="@drawable/gamers_hub_icn"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".AdminstrationLayouts.AdminMain"></activity>
-        <activity android:name=".User_Profile" />
+        <activity android:name=".Game_Profile"></activity>
+        <activity android:name=".AdminstrationLayouts.AdminMain" />
+        <activity android:name=".User_Profile.User_Profile" />
         <activity
             android:name=".Opener.Opener"
             android:screenOrientation="portrait" />

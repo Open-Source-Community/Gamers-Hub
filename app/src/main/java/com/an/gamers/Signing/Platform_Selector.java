@@ -51,11 +51,11 @@ public class Platform_Selector extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
        View view=inflater.inflate(R.layout.fragment_platform__selector, container, false);
-        recyclerView = view.findViewById(R.id.platform_recycler);
-        searchBtn =view.findViewById(R.id.searchbtn);
-        searchbox=view.findViewById(R.id.searchbox);
-        nxtBtn=view.findViewById(R.id.platforms_next_btn);
-        backBtn=view.findViewById(R.id.platforms_back_btn);
+        recyclerView = view.findViewById(R.id.Platform_selector_recycler);
+        searchBtn =view.findViewById(R.id.Platform_selector_searchbtn);
+        searchbox=view.findViewById(R.id.Platform_selector_searchbox);
+        nxtBtn=view.findViewById(R.id.Platform_selector_nextbtn);
+        backBtn=view.findViewById(R.id.Platform_selector_backbtn);
         adapter = new RecycleAdapter(this.getActivity(), Platformslist);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this.getContext());
         recyclerView.setLayoutManager(mLayoutManager);
@@ -149,7 +149,7 @@ public class Platform_Selector extends Fragment {
         @Override
         public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View itemView = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.platforms_card, parent, false);
+                    .inflate(R.layout.platform_card, parent, false);
             return new MyViewHolder(itemView);
         }
         @Override
