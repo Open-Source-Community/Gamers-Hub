@@ -1,7 +1,6 @@
 package com.an.gamers.Signing;
 
 import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -14,7 +13,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.an.gamers.Model_Classes.Platform;
 import com.an.gamers.R;
 
 import java.util.ArrayList;
