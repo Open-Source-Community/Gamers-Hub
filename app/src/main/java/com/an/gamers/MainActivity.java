@@ -1,12 +1,12 @@
 package com.an.gamers;
 
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.an.gamers.Main_Fragments.chat;
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         BoomMenuButton bmb1 = findViewById(R.id.bmb);
-        bmb1.setNormalColor(R.color.OSC_Color);
+        bmb1.setNormalColor(R.color.osc_color);
         for (int i = 0; i < bmb1.getPiecePlaceEnum().pieceNumber(); i++)
             bmb1.addBuilder(new TextInsideCircleButton.Builder()
                     .isRound(false)

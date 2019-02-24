@@ -98,4 +98,24 @@ public class Game {
     public void setGroupId(String groupId) {
         GroupId = groupId;
     }
+
+    public int getmRate() {
+        return mRate;
+    }
+
+    public void setmRate(int mRate) {
+        this.mRate = mRate;
+    }
+
+    public int getmUsersNum() {
+        return mUsersNum;
+    }
+
+    public static int getmCurrentUsers() {
+        return mCurrentUsers;
+    }
+
+    public static void setmCurrentUsers(int mCurrentUsers) {
+        Game.mCurrentUsers = mCurrentUsers;
+    }
 }

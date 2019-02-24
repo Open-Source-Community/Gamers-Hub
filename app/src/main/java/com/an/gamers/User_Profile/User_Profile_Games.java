@@ -28,14 +28,14 @@ public class User_Profile_Games extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Platformslist=new ArrayList<>();
-        Platformslist.add(new Platform("NINTENDO",R.drawable.nintendo));
+      /*  Platformslist.add(new Platform("NINTENDO",R.drawable.nintendo));
         Platformslist.add(new Platform("PC",R.drawable.mouse));
         Platformslist.add(new Platform("PLAYSTATION 3",R.drawable.playstation3));
         Platformslist.add(new Platform("PLAYSTATION 4",R.drawable.playstation4));
         Platformslist.add(new Platform("WII",R.drawable.wii));
         Platformslist.add(new Platform("XBOX 360",R.drawable.xbox360));
         Platformslist.add(new Platform("XBOX ONE",R.drawable.xboxone));
-    }
+  */  }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -75,8 +75,8 @@ public class User_Profile_Games extends Fragment {
         @Override
         public void onBindViewHolder(final RecycleAdapter.MyViewHolder holder, int position) {
             Platform platform = platformlist.get(position);
-            holder.name.setText(platform.getName());
-            holder.image.setImageResource(platform.getImage());
+            holder.name.setText(platform.getmName());
+            holder.image.setImageResource(R.drawable.osc_logo);
         }
         @Override
         public int getItemCount() {

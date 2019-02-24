@@ -15,12 +15,11 @@ public class Platform {
     public Platform() {
     }
 
-    public Platform(String mID, String mName, String mPhoto, String groupId, List<String> lIdgames) {
+    public Platform(String mID, String mName, String mPhoto, String groupId) {
         this.mID = mID;
         this.mName = mName;
         this.mPhoto = mPhoto;
         this.mGroupId = groupId;
-        this.lIdgames = lIdgames;
         mUsersNum=0;
         mCurrentUsers=0;
     }
@@ -71,9 +70,18 @@ public class Platform {
     public void setmGroupId(String mGroupId) {
         this.mGroupId = mGroupId;
     }
-
     public List<String> getlIdgames() {
         return lIdgames;
+    }
+    public boolean AddGame(String id){
+        if(lIdgames.contains(id)){
+            return false;
+        }
+        else
+        {
+            lIdgames.add(id);
+            return true;
+        }
     }
 
     public void setlIdgames(List<String> lIdgames) {

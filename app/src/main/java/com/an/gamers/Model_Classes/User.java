@@ -1,13 +1,5 @@
 package com.an.gamers.Model_Classes;
 
-import android.support.annotation.NonNull;
-
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,21 +16,21 @@ public class User {
    private List<String> lReportid;
     public User()
     {
+        mFav_Platforms=new ArrayList<>();
+        mFav_Games=new ArrayList<>();
+        Groups=new ArrayList<>();
+        lPostsid=new ArrayList<>();
+        lReportid=new ArrayList<>();
     }
 
 
 
-    public User(String mId_user, String mUserName, String mEmail, String mPassword, List<String> mFav_Platforms, List<String> mFav_Games, List<String> groups, String mPhoto, List<String> lPostsid, List<String> lReportid) {
+    public User(String mId_user, String mUserName, String mEmail, String mPassword, String mPhoto) {
         this.mId_user = mId_user;
         this.mUserName = mUserName;
         this.mEmail = mEmail;
         this.mPassword = mPassword;
-        this.mFav_Platforms = mFav_Platforms;
-        this.mFav_Games = mFav_Games;
-        Groups = groups;
         this.mPhoto = mPhoto;
-        this.lPostsid = lPostsid;
-        this.lReportid = lReportid;
     }
 
     public List<String> getlPostsid() {
@@ -56,7 +48,18 @@ public class User {
     public void setlReportid(List<String> lReportid) {
         this.lReportid = lReportid;
     }
-
+    public void  addPlatform(String id){
+    mFav_Platforms.add(id);
+    }
+    public void  addGame(String id){
+        mFav_Games.add(id);
+    }
+    public void  removePlatform(String id){
+        mFav_Platforms.remove(id);
+    }
+    public void  removeGame(String id){
+        mFav_Games.remove(id);
+    }
     public String getmId_user() {
         return mId_user;
     }

@@ -7,7 +7,6 @@ import com.an.gamers.Model_Classes.Group;
 import com.an.gamers.Model_Classes.Platform;
 import com.an.gamers.Model_Classes.Post;
 import com.an.gamers.Model_Classes.User;
-
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -20,36 +19,18 @@ import java.util.List;
 import java.util.Map;
 
 public class Adminstration {
-    private User currentuser;
-    private Map<String,Group> mGroups;
-    private Map<String,Platform> mPlateforms;
-    private Map<String,Post> mPosts;
-    private Map<String,User> musers;
-    private Map<String,Game> mGames;
+    public static User currentuser=new User();
+    public static Map<String,Group> mGroups =new HashMap<>();
+    public static Map<String,Platform> mPlateforms=new HashMap<>();
+    public static Map<String,Post> mPosts=new HashMap<>();
+    public static Map<String,User> musers=new HashMap<>();
+    public static Map<String,Game> mGames=new HashMap<>();
     private DatabaseReference databaseRef;
-    private String users_s;
-    private String groups_s;
-    private String games_s;
-    private String posts_s;
-    private String platform_s;
-
-    public Adminstration() {
-        mGroups=new HashMap<>();
-        mPlateforms=new HashMap<>();
-        mPosts=new HashMap<>();
-        musers=new HashMap<>();
-        mGames=new HashMap<>();
-        users_s = "users";
-        groups_s="groups";
-        posts_s = "posts";
-        platform_s= "platforms";
-        games_s = "games";
-    }
-
-    public Adminstration(User currentuser) {
-        this.currentuser = currentuser;
-
-    }
+    private final String users_s= "users";
+    private final String groups_s="groups";
+    private final String games_s= "games";
+    private final String posts_s= "posts";
+    private final String platform_s= "platforms";
     public void Adduser(User newuser) {
         databaseRef= FirebaseDatabase.getInstance().getReference(users_s);
         databaseRef.child(newuser.getmId_user()).setValue(newuser);

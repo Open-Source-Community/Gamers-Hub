@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
+    android:background="#737373"
     xmlns:custom="http://schemas.android.com/apk/res-auto"
     tools:context=".Opener.SplashScreen">
 
@@ -17,10 +17,12 @@
         android:minHeight="400dp"
         custom:gif="@mipmap/giph" />
     <RelativeLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/rnd_dim"
+        android:padding="10dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         android:layout_alignParentBottom="true">
             />
         <TextView
@@ -31,6 +33,7 @@
             android:text="Powered By"
             android:textColor="#ff9900"
             android:textSize="20sp"
+            android:layout_marginStart="60dp"
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             />

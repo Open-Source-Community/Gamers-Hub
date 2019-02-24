@@ -9,6 +9,8 @@
             android:id="@+id/main_frame_container"
             android:layout_width="match_parent"
             android:layout_below="@id/main_navbar"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/rnd_dim"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             android:layout_height="match_parent" />
 
@@ -17,12 +19,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
-            android:background="?android:attr/windowBackground"
+            android:background="@drawable/rnd_dim"
             android:foreground="?attr/selectableItemBackground"
             app:itemBackground="@color/default_bmb_dimColor"
-            app:itemIconTint="#ff9900"
-            app:itemTextColor="#ff9900"
-            app:itemIconSize="30dp"
+            app:itemIconTint="@color/osc_color"
+            app:itemTextColor="@color/osc_color"
+            app:itemIconSize="24dp"
             android:textAlignment="center"
             app:menu="@menu/main_navmenu" />
     <com.nightonke.boommenu.BoomMenuButton
@@ -30,8 +32,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:bmb_buttonEnum="textInsideCircle"
-        app:bmb_piecePlaceEnum="piecePlace_dot_5_4"
-        app:bmb_buttonPlaceEnum="buttonPlace_sc_5_4"
+        app:bmb_piecePlaceEnum="piecePlace_dot_3_4"
+        app:bmb_buttonPlaceEnum="buttonPlace_sc_3_4"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_margin="10dp"

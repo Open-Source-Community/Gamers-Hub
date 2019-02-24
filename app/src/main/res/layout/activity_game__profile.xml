@@ -17,7 +17,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:background="@drawable/profile_circular_border_imageview"
-        android:padding="15dp"
+        android:padding="10dp"
         android:scaleType="centerCrop"
         android:src="@drawable/osc_logo" />
 
@@ -29,7 +29,7 @@
         android:layout_below="@id/Game_profile_photo"
         android:layout_marginTop="20dp"
         android:hint="Game Name"
-        android:textColor="@color/OSC_Color"
+        android:textColor="@color/osc_color"
         android:textSize="24sp"
         android:textStyle="bold" />
 <TextView
@@ -42,6 +42,16 @@
     android:id="@+id/Game_profile_platform"
     android:layout_below="@id/Game_profile_name"
     />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="WebSite"
+        android:textSize="18sp"
+        android:linksClickable="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:id="@+id/Game_profile_link"
+        android:layout_below="@id/Game_profile_platform" />
 <RatingBar
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -50,8 +60,8 @@
     android:rating="1"
     android:isIndicator="true"
     android:textAlignment="textEnd"
-    android:progressTint="@color/OSC_Color"
-    android:layout_below="@id/Game_profile_platform"
+    android:progressTint="@color/osc_color"
+    android:layout_below="@id/Game_profile_link"
     android:id="@+id/Game_profile_rate"/>
     <ScrollView
         android:layout_width="match_parent"
@@ -66,7 +76,7 @@
             android:textAlignment="textStart"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="#ffff00"
+            android:textColor="@color/gold"
             android:background="@drawable/notactivebtn"
             android:padding="10dp"
             android:drawableTop="@drawable/ic_game_24dp"/>

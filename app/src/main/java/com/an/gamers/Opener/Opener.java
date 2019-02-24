@@ -2,11 +2,11 @@ package com.an.gamers.Opener;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +17,6 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.an.gamers.MainActivity;
 import com.an.gamers.R;
 import com.an.gamers.Signing.SigningActivity;
 
@@ -62,11 +61,11 @@ public class Opener extends AppCompatActivity {
             dots[i]=new TextView(this);
             dots[i].setText(Html.fromHtml("&#8226;" ));
             dots[i].setTextSize(35);
-            dots[i].setTextColor(getResources().getColor(R.color.bg_screen2));
+            dots[i].setTextColor(getResources().getColor(R.color.bg_mainactivity));
             controllayout.addView(dots[i]);
         }
         if(dots.length>0){
-            dots[position].setTextColor(getResources().getColor(R.color.colorAccent));
+            dots[position].setTextColor(getResources().getColor(R.color.osc_color));
         }
     }
     ViewPager.OnPageChangeListener viewListener=new ViewPager.OnPageChangeListener() {
@@ -109,13 +108,14 @@ public class Opener extends AppCompatActivity {
         ImageView imageView;
         TextView header,description;
         String [] Headers={
-                "Welcome","For","You"
+                "Gaming Community","Share Your EXP","Well Designed"
         };
         String [] Descriptions={
-                "Frist Page","Second Page","Third Page"
+                "Gamers Hub is a gaming community where gamers share their achievements and experiences to help one another enjoy gaming"
+                ,"Share exp with the geeks community","This Application is developed and designed by powerful developers in OSC Projects Committee"
         };
         int [] Images={
-                R.drawable.ic_lock_24dp,R.drawable.ic_person_24dp,R.drawable.ic_lock_24dp
+                R.drawable.cooperation,R.drawable.share_exp,R.drawable.projects_icn
         };
         public OpenerAdapter(Context context) {
             this.context = context;

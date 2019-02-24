@@ -17,6 +17,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.an.gamers.AdminstrationLayouts.Adminstration;
+import com.an.gamers.Model_Classes.Platform;
 import com.an.gamers.R;
 
 import java.util.ArrayList;
@@ -37,13 +39,8 @@ public class Platform_Selector extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Platformslist=new ArrayList<>();
-        Platformslist.add(new Platform("NINTENDO",R.drawable.nintendo));
-        Platformslist.add(new Platform("PC",R.drawable.mouse));
-        Platformslist.add(new Platform("PLAYSTATION 3",R.drawable.playstation3));
-        Platformslist.add(new Platform("PLAYSTATION 4",R.drawable.playstation4));
-        Platformslist.add(new Platform("WII",R.drawable.wii));
-        Platformslist.add(new Platform("XBOX 360",R.drawable.xbox360));
-        Platformslist.add(new Platform("XBOX ONE",R.drawable.xboxone));
+        Platformslist.add(new Platform("plat1","Nintendo","photo","Group 123"));
+        Platformslist.add(new Platform("plat2","PC","photo","Group 124"));
     }
 
     @Override
@@ -99,13 +96,28 @@ public class Platform_Selector extends Fragment {
                 }
             }
         });
+        nxtBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SigningActivity activity=new SigningActivity();
+                activity.loadFragment(new Game_Selector());
+            }
+        });
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SigningActivity activity=new SigningActivity();
+                activity.loadFragment(new SignUp());
+            }
+        });
         // Inflate the layout for this fragment
         return view;
     }
+
     public ArrayList<Platform> searchresult(String search){
         ArrayList<Platform>platforms=new ArrayList<>();
         for(Platform s:Platformslist){
-            if(s.getName().contains(search)){
+            if(s.getmName().contains(search)){
                 platforms.add(s);
             }
         }
@@ -125,17 +137,25 @@ public class Platform_Selector extends Fragment {
 
             MyViewHolder(View view) {
                 super(view);
-                image = view.findViewById(R.id.platform_img);
-                check=view.findViewById(R.id.checked);
-                name = view.findViewById(R.id.platform_name);
+                image = view.findViewById(R.id.platform_card_img);
+                check=view.findViewById(R.id.platform_card_checked);
+                name = view.findViewById(R.id.platform_card_name);
                 view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         if(check.getVisibility()==View.INVISIBLE) {
                             check.setVisibility(View.VISIBLE);
+                            for (Platform p:platformlist) {
+                             if(p.getmName().equals(name.getText().toString()))
+                                 Adminstration.currentuser.addPlatform(p.getmID());
+                            }
                         }
                         else if (check.getVisibility()==View.VISIBLE){
                             check.setVisibility(View.INVISIBLE);
+                            for (Platform p:platformlist) {
+                                if(p.getmName().equals(name.getText().toString()))
+                                    Adminstration.currentuser.removePlatform(p.getmID());
+                            }
                         }
                     }
                 });
@@ -154,8 +174,8 @@ public class Platform_Selector extends Fragment {
         @Override
         public void onBindViewHolder(final MyViewHolder holder, int position) {
             Platform platform = platformlist.get(position);
-            holder.name.setText(platform.getName());
-            holder.image.setImageResource(platform.getImage());
+            holder.name.setText(platform.getmName());
+            holder.image.setImageResource(R.drawable.osc_logo);
         }
         @Override
         public int getItemCount() {

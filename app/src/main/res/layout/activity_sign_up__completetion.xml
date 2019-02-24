@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="600dp"
+    android:background="@drawable/rnd_dim"
+    android:layout_marginTop="60dp"
+    tools:context=".Signing.SignUp_Completetion">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:text="Layout Header"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:textSize="26sp"
+        android:textAlignment="center"
+        android:textColor="@color/osc_color"
+        android:id="@+id/SignUp_Comp_Header"/>
+    <FrameLayout
+        android:id="@+id/SignUp_Comp_frame_container"
+        android:layout_width="match_parent"
+        android:layout_below="@id/SignUp_Comp_Header"
+        android:layout_marginTop="10dp"
+        android:layout_height="match_parent"
+        android:layout_above="@id/SignUp_Comp_nxtbtn"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"  />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/SignUp_Comp_nxtbtn"
+        android:background="@drawable/activebtn"
+        android:layout_alignParentEnd="true"
+        android:text="Next"
+        android:visibility="invisible"
+        android:enabled="false"
+        android:textColor="@color/osc_color"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_margin="10dp"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

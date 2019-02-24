@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Gamers-Hub.iml" filepath="$PROJECT_DIR$/Gamers-Hub.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gamershub.iml" filepath="$PROJECT_DIR$/gamershub.iml" />
     </modules>
   </component>
 </project>

@@ -10,13 +10,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
-        android:background="?android:attr/windowBackground"
+        android:background="@drawable/rnd_dim"
         android:foreground="?attr/selectableItemBackground"
         app:itemBackground="@color/default_bmb_dimColor"
-        app:itemIconTint="#ff9900"
-        app:itemTextColor="#ff9900"
+        app:itemIconTint="@color/osc_color"
+        app:itemTextColor="@color/osc_color"
         app:itemIconSize="24dp"
         android:textAlignment="center"
         app:menu="@menu/admin_navmenu" />
+
+    <FrameLayout
+        android:id="@+id/main_frame_container"
+        android:layout_width="match_parent"
+        android:layout_below="@id/admin_navbar"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/rnd_dim"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_height="match_parent" />
 
 </RelativeLayout>

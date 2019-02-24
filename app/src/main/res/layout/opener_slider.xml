@@ -5,10 +5,10 @@
     android:layout_height="match_parent">
 
         <ImageView
-            android:layout_width="@dimen/img_width_height"
-            android:layout_height="@dimen/img_width_height"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="140dp"
             android:layout_centerHorizontal="true"
              android:id="@+id/opener_image"/>
 
@@ -18,7 +18,7 @@
             android:layout_below="@id/opener_image"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:textColor="@color/dot_dark_screen1"
+            android:textColor="@color/osc_color"
             android:textSize="@dimen/slide_title"
             android:id="@+id/opener_header"
             android:textStyle="bold" />
@@ -33,6 +33,6 @@
             android:paddingRight="@dimen/desc_padding"
             android:layout_centerHorizontal="true"
             android:textAlignment="center"
-            android:textColor="@color/dot_dark_screen1"
-            android:textSize="@dimen/slide_desc" />
+            android:textColor="@color/gold"
+            android:textSize="18sp" />
 </RelativeLayout>
