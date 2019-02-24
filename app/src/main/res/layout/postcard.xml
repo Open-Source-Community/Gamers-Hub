@@ -6,7 +6,7 @@
     android:layout_margin="15dp"
     android:foreground="?selectableItemBackground"
     android:background="@drawable/rnd_dim"
-    card_view:cardCornerRadius="20dp"
+    card_view:cardCornerRadius="10dp"
     card_view:cardElevation="10dp"
     android:clickable="true"
     android:focusable="true">
@@ -38,10 +38,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/osc_color"
-            android:textSize="22sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:hint="Poster Name"
-            android:textAlignment="center"
+            android:textAlignment="textStart"
             android:textAllCaps="true"
             />
         <TextView
@@ -50,6 +50,7 @@
             android:id="@+id/Post_card_date"
             android:textColor="#ffff00"
             android:textSize="14sp"
+            android:textAlignment="textStart"
             android:textStyle="bold"
             android:layout_marginTop="5dp"
             android:layout_below="@id/Post_card_name"
@@ -65,7 +66,8 @@
             android:background="@drawable/rnd_dim"
             android:textColor="#ffff00"
             android:id="@+id/Post_card_groupname"
-            android:textSize="14sp" android:layout_marginTop="15dp"
+            android:textSize="14sp"
+            android:layout_marginTop="15dp"
             android:textStyle="bold"/>
         <MultiAutoCompleteTextView
             android:layout_width="wrap_content"

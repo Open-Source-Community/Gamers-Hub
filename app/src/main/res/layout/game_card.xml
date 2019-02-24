@@ -6,7 +6,7 @@
     android:layout_margin="15dp"
     android:foreground="?selectableItemBackground"
     android:background="@drawable/rnd_dim"
-    card_view:cardCornerRadius="20dp"
+    card_view:cardCornerRadius="10dp"
     card_view:cardElevation="10dp"
     android:clickable="true"
     android:focusable="true">
@@ -19,13 +19,13 @@
         >
         <ImageButton
             android:id="@+id/game_card_img"
-            android:layout_width="64dp"
+            android:layout_width="48dp"
             android:layout_alignParentStart="true"
             android:scaleType="fitCenter"
             android:src="@drawable/osc_logo"
             android:padding="10dp"
             android:background="@drawable/profile_circular_border_imageview"
-            android:layout_height="64dp"
+            android:layout_height="48dp"
             android:layout_marginStart="10dp"
             />
         <TextView
@@ -38,9 +38,9 @@
             android:textColor="@color/osc_color"
             android:layout_alignParentTop="true"
             android:hint="Game Name"
-            android:textSize="22sp"
+            android:textSize="18sp"
             android:textStyle="bold"
-            android:textAlignment="center"
+            android:textAlignment="textStart"
             android:textAllCaps="true"
             />
         <TextView
@@ -52,10 +52,10 @@
             android:layout_height="wrap_content"
             android:textColor="@color/gold"
             android:hint="Game Platform"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:layout_below="@id/game_card_name"
             android:textStyle="bold"
-            android:textAlignment="center"
+            android:textAlignment="textStart"
             android:textAllCaps="true" />
         <ImageView
             android:layout_width="24dp"

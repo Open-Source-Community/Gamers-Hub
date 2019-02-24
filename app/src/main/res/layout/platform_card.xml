@@ -6,7 +6,7 @@
     android:layout_margin="15dp"
     android:foreground="?selectableItemBackground"
     android:background="@drawable/notactivebtn"
-    card_view:cardCornerRadius="20dp"
+    card_view:cardCornerRadius="10dp"
     card_view:cardElevation="10dp"
     android:clickable="true"
     android:focusable="true">
@@ -20,13 +20,13 @@
 
         <ImageButton
             android:id="@+id/platform_card_img"
-            android:layout_width="64dp"
+            android:layout_width="48dp"
             android:layout_alignParentStart="true"
             android:scaleType="centerCrop"
             android:src="@drawable/osc_logo"
             android:padding="10dp"
             android:background="@drawable/profile_circular_border_imageview"
-            android:layout_height="64dp"
+            android:layout_height="48dp"
             android:layout_marginStart="20dp"
             />
 
@@ -38,7 +38,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/osc_color"
-            android:textSize="22sp"
+            android:textSize="18sp"
             android:hint="Platform Name"
             android:textStyle="bold"
             android:textAlignment="center"

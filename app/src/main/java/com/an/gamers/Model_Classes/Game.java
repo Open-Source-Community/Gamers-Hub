@@ -5,7 +5,7 @@ public class Game {
     private String mName;
     private String mDescreption;
     private String mPlatform;
-    private String mPhoto;
+    private int mPhoto;
     private String mWebsite;
     private String GroupId;
     private int mRate;
@@ -15,7 +15,7 @@ public class Game {
     {
     }
 
-    public Game(String mID, String mName, String mDescreption, String mPlatform, String mPhoto, String mWebsite, String groupId) {
+    public Game(String mID, String mName, String mDescreption, String mPlatform, int mPhoto, String mWebsite, String groupId) {
         this.mID = mID;
         this.mName = mName;
         this.mDescreption = mDescreption;
@@ -75,11 +75,11 @@ public class Game {
         this.mPlatform = mPlatform;
     }
 
-    public String getmPhoto() {
+    public int getmPhoto() {
         return mPhoto;
     }
 
-    public void setmPhoto(String mPhoto) {
+    public void setmPhoto(int mPhoto) {
         this.mPhoto = mPhoto;
     }
 

@@ -10,8 +10,8 @@
 
     <com.cunoraz.gifview.library.GifView
         android:id="@+id/splashgif"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="500dp"
+        android:layout_height="500dp"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:minWidth="400dp"

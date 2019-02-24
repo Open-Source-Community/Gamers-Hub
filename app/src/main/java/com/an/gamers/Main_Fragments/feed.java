@@ -31,8 +31,8 @@ public class feed extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Postslist =new ArrayList<>();
-        Postslist.add(new Post("Post1","1","OSC Welcomed You","14 feb","123"));
-        Postslist.add(new Post("Post2","1","OSC Welcomed You","14 feb","123"));
+        Postslist.add(new Post("Post1","Ahmed","OSC is an OpenSource Community","14 feb 2019","GR170"));
+        Postslist.add(new Post("Post2","Mai","OSC Welcomed You","14 feb 2019","GR204"));
     }
 
     @Override

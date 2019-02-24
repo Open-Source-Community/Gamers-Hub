@@ -3,7 +3,6 @@ package com.an.gamers;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -29,12 +28,10 @@ public class MainActivity extends AppCompatActivity {
                     .isRound(false)
                     .shadowCornerRadius(Util.dp2px(10))
                     .buttonCornerRadius(Util.dp2px(10))
-                    .normalImageRes(R.drawable.ic_person_24dp)
+                    .normalImageRes(R.drawable.osc_logo)
                     .normalTextRes(R.string.hello_blank_fragment));
         BottomNavigationView navigation = findViewById(R.id.main_navbar);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) navigation.getLayoutParams();
-        layoutParams.setBehavior(new TopNavigationBehavior());
         loadFragment(new feed());
 
     }

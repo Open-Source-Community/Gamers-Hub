@@ -5,7 +5,7 @@ import java.util.List;
 public class Platform {
     private String mID;
     private String mName;
-    private String mPhoto;
+    private int mPhoto;
     private int mRate;
     private String mGroupId;
     private List<String> lIdgames;
@@ -15,7 +15,7 @@ public class Platform {
     public Platform() {
     }
 
-    public Platform(String mID, String mName, String mPhoto, String groupId) {
+    public Platform(String mID, String mName, int mPhoto, String groupId) {
         this.mID = mID;
         this.mName = mName;
         this.mPhoto = mPhoto;
@@ -55,11 +55,11 @@ public class Platform {
         this.mName = mName;
     }
 
-    public String getmPhoto() {
+    public int getmPhoto() {
         return mPhoto;
     }
 
-    public void setmPhoto(String mPhoto) {
+    public void setmPhoto(int mPhoto) {
         this.mPhoto = mPhoto;
     }
 

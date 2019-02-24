@@ -1,15 +1,12 @@
 package com.an.gamers.Signing;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,20 +17,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.an.gamers.AdminstrationLayouts.Adminstration;
-import com.an.gamers.MainActivity;
 import com.an.gamers.Model_Classes.Game;
 import com.an.gamers.R;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class Game_Selector extends Fragment {
     private RecyclerView recyclerView;
     private RecycleAdapter adapter;
     private EditText searchbox;
-    private Button searchBtn, doneBtn,backBtn;
+    private Button searchBtn;
     private ArrayList<Game> Gameslist;
     public Game_Selector() {
         // Required empty public constructor
@@ -43,8 +37,14 @@ public class Game_Selector extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Gameslist=new ArrayList<>();
-        Gameslist.add(new Game("game 1","Pubg","Mobile Game","Mobile","photo","www.id","group24"));
-        Gameslist.add(new Game("game2","GTA","PC Game","PC","photo","www.id","group25"));
+        Gameslist.add(new Game("game1","Pubg","Mobile Game","Mobile"
+                ,R.drawable.pubg_mobile,"www.pubg.com","group24"));
+        Gameslist.add(new Game("game2","Medal Of Honor","PC Game","PC",
+                R.drawable.medal_of_honor,"www.moh.com","group25"));
+        Gameslist.add(new Game("game3","Need For Speed","PlayStation 4 Game","PS4",
+                R.drawable.nfs_ps4,"www.nfs.com","group25"));
+        Gameslist.add(new Game("game4","Grand Theft Auto V","PlayStation 3 Game","PS3",
+                R.drawable.gtav_ps3,"www.gtav.com","group25"));
     }
 
     @Override
@@ -54,40 +54,11 @@ public class Game_Selector extends Fragment {
         recyclerView = view.findViewById(R.id.Game_selector_recycler);
         searchBtn =view.findViewById(R.id.Game_selector_searchbtn);
         searchbox=view.findViewById(R.id.Game_selector_searchbox);
-        doneBtn =view.findViewById(R.id.Game_selector_donebtn);
-        backBtn=view.findViewById(R.id.Game_selector_backbtn);
         adapter = new RecycleAdapter(this.getActivity(), Gameslist);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this.getContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
-        searchbox.addTextChangedListener(
-                new TextWatcher() {
-                    @Override public void onTextChanged(CharSequence s, int start, int before, int count) {}
-                    @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-
-                    private Timer timer = new Timer();
-                    private final long DELAY = 500; // milliseconds
-
-                    @Override
-                    public void afterTextChanged(final Editable s) {
-                        timer.cancel();
-                        timer = new Timer();
-                        timer.schedule(
-                                new TimerTask() {
-                                    @Override
-                                    public void run() {
-                                        if(!searchresult(searchbox.getText().toString().trim().toUpperCase()).isEmpty()){
-                                            adapter.setPlatforms(searchresult(searchbox.getText().toString().trim().toUpperCase()));
-                                            recyclerView.setAdapter(adapter);
-                                        }
-                                    }
-                                },
-                                DELAY
-                        );
-                    }
-                }
-        );
         searchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -98,20 +69,6 @@ public class Game_Selector extends Fragment {
                 else{
                     Toast.makeText(Game_Selector.this.getContext(), "Not Found", Toast.LENGTH_SHORT).show();
                 }
-            }
-        });
-        doneBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Game_Selector.this.startActivity(new Intent(Game_Selector.this.getContext(), MainActivity.class));
-                Game_Selector.this.getActivity().finish();
-            }
-        });
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SigningActivity activity=new SigningActivity();
-                activity.loadFragment(new Platform_Selector());
             }
         });
         // Inflate the layout for this fragment
@@ -180,7 +137,7 @@ public class Game_Selector extends Fragment {
         public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
             Game game = gamesList.get(position);
             holder.name.setText(game.getmName());
-            holder.image.setImageResource(R.drawable.ic_game_24dp);
+            holder.image.setImageResource(game.getmPhoto());
             holder.platform.setText(game.getmPlatform());
         }
         @Override
