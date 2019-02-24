@@ -46,6 +46,7 @@ public class SignUp extends Fragment {
                         Adminstration.currentuser.setmEmail(Email.getText().toString().trim());
                         Adminstration.currentuser.setmPassword(Password.getText().toString().trim());
                         SignUp.this.startActivity(new Intent(SignUp.this.getContext(), SignUp_Completetion.class));
+                        SignUp.this.getActivity().finish();
                     }
                     else {
                         Toast.makeText(SignUp.this.getContext(),"Please Accept Our Rights" ,Toast.LENGTH_SHORT ).show();

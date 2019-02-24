@@ -1,10 +1,8 @@
 package com.an.gamers.Model_Classes;
 
-import java.util.List;
-
 public class Post {
     private String mId;
-    private List<String> lUsersid;
+    private String Userid;
     private String mContent;
     private String mDate;
     private String mGroupid;
@@ -12,9 +10,9 @@ public class Post {
     public Post() {
     }
 
-    public Post(String mId, List<String> lUsersid, String mContent, String mDate, String mGroupid) {
+    public Post(String mId, String lUserid, String mContent, String mDate, String mGroupid) {
         this.mId = mId;
-        this.lUsersid = lUsersid;
+        this.Userid = lUserid;
         this.mContent = mContent;
         this.mDate = mDate;
         this.mGroupid = mGroupid;
@@ -28,12 +26,12 @@ public class Post {
         this.mId = mId;
     }
 
-    public List<String> getlUsersid() {
-        return lUsersid;
+    public String getUserid() {
+        return Userid;
     }
 
-    public void setlUsersid(List<String> lUsersid) {
-        this.lUsersid = lUsersid;
+    public void setUserid(String lUsersid) {
+        this.Userid = lUsersid;
     }
 
     public String getmContent() {

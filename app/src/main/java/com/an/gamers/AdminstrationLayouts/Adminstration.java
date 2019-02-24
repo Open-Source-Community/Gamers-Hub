@@ -31,6 +31,7 @@ public class Adminstration {
     private final String games_s= "games";
     private final String posts_s= "posts";
     private final String platform_s= "platforms";
+
     public void Adduser(User newuser) {
         databaseRef= FirebaseDatabase.getInstance().getReference(users_s);
         databaseRef.child(newuser.getmId_user()).setValue(newuser);
