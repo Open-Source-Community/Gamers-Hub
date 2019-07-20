@@ -20,12 +20,12 @@ public class Platform {
         this.mName = mName;
         this.mPhoto = mPhoto;
         this.mGroupId = groupId;
-        mUsersNum=0;
-        mCurrentUsers=0;
+        mUsersNum = 0;
+        mCurrentUsers = 0;
     }
-    public void udatecureentusers()
-    {
-        mCurrentUsers=mCurrentUsers+1;
+
+    public void udatecureentusers() {
+        mCurrentUsers = mCurrentUsers + 1;
         ratecalc();
     }
 
@@ -34,11 +34,12 @@ public class Platform {
 
 
     }
-    private void ratecalc()
-    {
-        float div=(mCurrentUsers/mUsersNum);
-        mRate=(int)div*100;
+
+    private void ratecalc() {
+        float div = (mCurrentUsers / mUsersNum);
+        mRate = (int) div * 100;
     }
+
     public String getmID() {
         return mID;
     }
@@ -70,15 +71,15 @@ public class Platform {
     public void setmGroupId(String mGroupId) {
         this.mGroupId = mGroupId;
     }
+
     public List<String> getlIdgames() {
         return lIdgames;
     }
-    public boolean AddGame(String id){
-        if(lIdgames.contains(id)){
+
+    public boolean AddGame(String id) {
+        if (lIdgames.contains(id)) {
             return false;
-        }
-        else
-        {
+        } else {
             lIdgames.add(id);
             return true;
         }

@@ -18,8 +18,8 @@ public class Group {
         this.lUsersid = lUsersid;
     }
 
-    public Group( String mName) {
-        this.mName=mName;
+    public Group(String mName) {
+        this.mName = mName;
     }
 
     public String getmID() {

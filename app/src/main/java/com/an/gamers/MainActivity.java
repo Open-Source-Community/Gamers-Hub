@@ -17,6 +17,7 @@ import com.nightonke.boommenu.Util;
 
 public class MainActivity extends AppCompatActivity {
     private BoomMenuButton bmb;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,8 +36,9 @@ public class MainActivity extends AppCompatActivity {
         loadFragment(new feed());
 
     }
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener()  {
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -58,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
     };
+
     private void loadFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.main_frame_container, fragment);

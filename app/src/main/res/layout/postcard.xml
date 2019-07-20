@@ -4,83 +4,85 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="15dp"
-    android:foreground="?selectableItemBackground"
     android:background="@drawable/rnd_dim"
-    card_view:cardCornerRadius="10dp"
-    card_view:cardElevation="10dp"
     android:clickable="true"
-    android:focusable="true">
+    android:focusable="true"
+    android:foreground="?selectableItemBackground"
+    card_view:cardCornerRadius="10dp"
+    card_view:cardElevation="10dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/rnd_dim"
-        android:padding="8dp"
-        >
+        android:padding="8dp">
 
         <ImageButton
             android:id="@+id/Post_card_img"
             android:layout_width="48dp"
-            android:layout_alignParentStart="true"
-            android:scaleType="fitCenter"
-            android:padding="5dp"
-            android:src="@drawable/osc_logo"
-            android:background="@drawable/profile_circular_border_imageview"
             android:layout_height="48dp"
+            android:layout_alignParentStart="true"
             android:layout_marginStart="10dp"
-            />
+            android:background="@drawable/profile_circular_border_imageview"
+            android:padding="5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/osc_logo" />
+
         <TextView
             android:id="@+id/Post_card_name"
-            android:layout_toEndOf="@id/Post_card_img"
-            android:layout_marginStart="10dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/osc_color"
-            android:textSize="20sp"
-            android:textStyle="bold"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@id/Post_card_img"
             android:hint="Poster Name"
             android:textAlignment="textStart"
             android:textAllCaps="true"
-            />
+            android:textColor="@color/osc_color"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
         <TextView
+            android:id="@+id/Post_card_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/Post_card_date"
-            android:textColor="#ffff00"
-            android:textSize="14sp"
-            android:textAlignment="textStart"
-            android:textStyle="bold"
-            android:layout_marginTop="5dp"
             android:layout_below="@id/Post_card_name"
             android:layout_alignStart="@id/Post_card_name"
-            android:hint="Post date"/>
+            android:layout_marginTop="5dp"
+            android:hint="Post date"
+            android:textAlignment="textStart"
+            android:textColor="#ffff00"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
         <TextView
+            android:id="@+id/Post_card_groupname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="15dp"
             android:hint="Post Group"
             android:padding="5dp"
-            android:background="@drawable/rnd_dim"
             android:textColor="#ffff00"
-            android:id="@+id/Post_card_groupname"
             android:textSize="14sp"
-            android:layout_marginTop="15dp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
+
         <MultiAutoCompleteTextView
+            android:id="@+id/Post_card_postcontent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/Post_card_postcontent"
-            android:layout_below="@id/Post_card_img"
+            android:layout_below="@id/Post_card_date"
             android:layout_alignStart="@id/Post_card_img"
             android:layout_marginTop="10dp"
-            android:textAlignment="textStart"
+            android:background="@color/default_bmb_dimColor"
+            android:enabled="false"
             android:hint="Post Content"
+            android:textAlignment="textStart"
             android:textColor="@color/osc_color"
-            android:textStyle="bold"
-            android:textSize="18sp"/>
+            android:textSize="18sp"
+            android:textStyle="bold" />
     </RelativeLayout>
 
 </android.support.v7.widget.CardView>

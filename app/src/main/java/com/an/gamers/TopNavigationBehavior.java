@@ -13,9 +13,11 @@ public class TopNavigationBehavior extends CoordinatorLayout.Behavior<BottomNavi
     TopNavigationBehavior() {
         super();
     }
+
     public TopNavigationBehavior(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
+
     @Override
     public boolean layoutDependsOn(CoordinatorLayout parent, BottomNavigationView child, View dependency) {
         return dependency instanceof FrameLayout;

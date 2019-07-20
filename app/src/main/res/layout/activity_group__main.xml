@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Group_Main">
-<ImageView
-    android:layout_width="match_parent"
-    android:layout_height="160dp"
-    android:scaleType="centerCrop"
-    android:src="@drawable/signback"
-    android:id="@+id/Group_main_cover"
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/signback"
+        android:id="@+id/Group_main_cover"
     />
     <ImageButton
         android:layout_width="100dp"
@@ -36,7 +36,7 @@
         android:textColor="@color/osc_color"
         android:layout_alignBottom="@id/Group_main_cover"/>
     <com.nightonke.boommenu.BoomMenuButton
-        android:id="@+id/bmb"
+        android:id="@+id/bmbGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:bmb_buttonEnum="textInsideCircle"
@@ -46,7 +46,7 @@
         android:layout_alignParentEnd="true"
         android:layout_margin="10dp"
         />
-    <android.support.v7.widget.RecyclerView
+   <android.support.v7.widget.RecyclerView
         android:id="@+id/Group_main_recycler"
         android:layout_width="match_parent"
         android:padding="15dp"

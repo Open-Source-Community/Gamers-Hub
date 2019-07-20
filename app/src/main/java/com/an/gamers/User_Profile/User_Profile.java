@@ -15,8 +15,9 @@ import com.an.gamers.Main_Fragments.feed;
 import com.an.gamers.R;
 
 public class User_Profile extends AppCompatActivity {
-    ImageButton EditePhoto,EditBtn;
+    ImageButton EditePhoto, EditBtn;
     BottomNavigationView navigation;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +25,7 @@ public class User_Profile extends AppCompatActivity {
         EditePhoto = findViewById(R.id.user_profile_editphoto);
         EditBtn = findViewById(R.id.user_profile_edit);
         EditePhoto.setEnabled(false);
-        navigation=findViewById(R.id.user_profile_navbar);
+        navigation = findViewById(R.id.user_profile_navbar);
     }
 
     @Override
@@ -33,11 +34,10 @@ public class User_Profile extends AppCompatActivity {
         EditBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!EditePhoto.isShown()){
+                if (!EditePhoto.isShown()) {
                     EditePhoto.setVisibility(View.VISIBLE);
                     EditePhoto.setEnabled(true);
-                }
-                else{
+                } else {
                     EditePhoto.setVisibility(View.INVISIBLE);
                     EditePhoto.setEnabled(false);
                 }
@@ -47,8 +47,9 @@ public class User_Profile extends AppCompatActivity {
         loadFragment(new feed());
 
     }
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener()  {
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -66,6 +67,7 @@ public class User_Profile extends AppCompatActivity {
             return false;
         }
     };
+
     private void loadFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.main_frame_container, fragment);

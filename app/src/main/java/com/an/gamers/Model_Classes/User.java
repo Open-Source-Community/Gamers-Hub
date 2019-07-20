@@ -4,25 +4,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class User {
-   private String mId_user;
-   private String mUserName;
-   private String mEmail;
-   private String mPassword;
-   private List<String> mFav_Platforms;
-   private List<String> mFav_Games;
-   private List<String> Groups;
-   private String mPhoto;
-   private List<String> lPostsid;
-   private List<String> lReportid;
-    public User()
-    {
-        mFav_Platforms=new ArrayList<>();
-        mFav_Games=new ArrayList<>();
-        Groups=new ArrayList<>();
-        lPostsid=new ArrayList<>();
-        lReportid=new ArrayList<>();
-    }
+    private String mId_user;
+    private String mUserName;
+    private String mEmail;
+    private String mPassword;
+    private List<String> mFav_Platforms;
+    private List<String> mFav_Games;
+    private List<String> Groups;
+    private String mPhoto;
+    private List<String> lPostsid;
+    private List<String> lReportid;
 
+    public User() {
+        mFav_Platforms = new ArrayList<>();
+        mFav_Games = new ArrayList<>();
+        Groups = new ArrayList<>();
+        lPostsid = new ArrayList<>();
+        lReportid = new ArrayList<>();
+    }
 
 
     public User(String mId_user, String mUserName, String mEmail, String mPassword, String mPhoto) {
@@ -48,18 +47,23 @@ public class User {
     public void setlReportid(List<String> lReportid) {
         this.lReportid = lReportid;
     }
-    public void  addPlatform(String id){
-    mFav_Platforms.add(id);
+
+    public void addPlatform(String id) {
+        mFav_Platforms.add(id);
     }
-    public void  addGame(String id){
+
+    public void addGame(String id) {
         mFav_Games.add(id);
     }
-    public void  removePlatform(String id){
+
+    public void removePlatform(String id) {
         mFav_Platforms.remove(id);
     }
-    public void  removeGame(String id){
+
+    public void removeGame(String id) {
         mFav_Games.remove(id);
     }
+
     public String getmId_user() {
         return mId_user;
     }

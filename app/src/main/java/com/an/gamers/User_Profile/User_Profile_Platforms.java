@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.an.gamers.R;
+
 public class User_Profile_Platforms extends Fragment {
     public User_Profile_Platforms() {
         // Required empty public constructor

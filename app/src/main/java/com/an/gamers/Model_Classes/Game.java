@@ -11,8 +11,8 @@ public class Game {
     private int mRate;
     private int mUsersNum;
     private static int mCurrentUsers;
-    public Game()
-    {
+
+    public Game() {
     }
 
     public Game(String mID, String mName, String mDescreption, String mPlatform, int mPhoto, String mWebsite, String groupId) {
@@ -23,13 +23,13 @@ public class Game {
         this.mPhoto = mPhoto;
         this.mWebsite = mWebsite;
         GroupId = groupId;
-        mCurrentUsers=0;
-        mRate=0;
-        mUsersNum=0;
+        mCurrentUsers = 0;
+        mRate = 0;
+        mUsersNum = 0;
     }
-    public void udatecureentusers()
-    {
-        mCurrentUsers=mCurrentUsers+1;
+
+    public void udatecureentusers() {
+        mCurrentUsers = mCurrentUsers + 1;
         ratecalc();
     }
 
@@ -38,11 +38,12 @@ public class Game {
 
 
     }
-    private void ratecalc()
-    {
-        float div=(mCurrentUsers/mUsersNum);
-        mRate=(int)div*100;
+
+    private void ratecalc() {
+        float div = (mCurrentUsers / mUsersNum);
+        mRate = (int) div * 100;
     }
+
     public String getmID() {
         return mID;
     }

@@ -23,27 +23,26 @@ public class SignUp_Completetion extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up__completetion);
         loadFragment(new Platform_Selector());
-        NXT_Button=findViewById(R.id.SignUp_Comp_nxtbtn);
+        NXT_Button = findViewById(R.id.SignUp_Comp_nxtbtn);
         NXT_Button.setVisibility(View.VISIBLE);
-        LayoutHeader=findViewById(R.id.SignUp_Comp_Header);
+        LayoutHeader = findViewById(R.id.SignUp_Comp_Header);
         NXT_Button.setEnabled(true);
-            NXT_Button.setOnClickListener(new View.OnClickListener() {
+        NXT_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!Adminstration.currentuser.getmFav_Platforms().isEmpty()&&Adminstration.currentuser.getmFav_Games().isEmpty()){
-                loadFragment(new Game_Selector());
+                if (!Adminstration.currentuser.getmFav_Platforms().isEmpty() && Adminstration.currentuser.getmFav_Games().isEmpty()) {
+                    loadFragment(new Game_Selector());
                     LayoutHeader.setText("Games");
-                }
-                else if(!Adminstration.currentuser.getmFav_Platforms().isEmpty()&&!Adminstration.currentuser.getmFav_Games().isEmpty()){
+                } else if (!Adminstration.currentuser.getmFav_Platforms().isEmpty() && !Adminstration.currentuser.getmFav_Games().isEmpty()) {
                     SignUp_Completetion.this.startActivity(new Intent(SignUp_Completetion.this, MainActivity.class));
                     SignUp_Completetion.this.finish();
-                }
-                else
-                    Toast.makeText(getBaseContext(),"You Should choose one PlatForm & one Game" ,Toast.LENGTH_SHORT ).show();
+                } else
+                    Toast.makeText(getBaseContext(), "You Should choose one PlatForm & one Game", Toast.LENGTH_SHORT).show();
             }
-            });
+        });
 
     }
+
     public void loadFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.SignUp_Comp_frame_container, fragment);

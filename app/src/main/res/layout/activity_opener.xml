@@ -9,6 +9,8 @@
     android:id="@+id/opener_view_pager"
     android:layout_alignParentTop="true"
     android:layout_width="match_parent"
+    android:layout_above="@id/opener_finishbtn"
+    android:layout_marginBottom="10dp"
     android:layout_height="match_parent">
 </android.support.v4.view.ViewPager>
     <LinearLayout
